@@ -27,3 +27,14 @@ spec:
 ```
 kubectl -n ckad-job get cj simple-node-job
 ```
+```
+kubectl -n ckad-job create job --from cj/simple-node-job test
+
+kubectl -n ckad-job get job
+
+kubectl -n ckad-job get po
+
+kubectl -n ckad-job events --for po/test-ss8wh
+
+kubectl -n ckad-job logs test-ss8wh
+```
