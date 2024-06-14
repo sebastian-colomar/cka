@@ -1,0 +1,29 @@
+```
+kubectl --dry-run=client -n ckad-job -oyaml create cj simple-node-job --image node --schedule '*/30 * * * *' -- sh -c 'ps -eaf'|tee 03.yaml
+```
+```
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: simple-node-job
+  namespace: ckad-job
+spec:
+  jobTemplate:
+    metadata:
+      name: simple-node-job
+    spec:
+      template:
+        spec:
+          containers:
+          - command:
+            - sh
+            - -c
+            - ps -eaf
+            image: node
+            name: simple-node-job
+          restartPolicy: OnFailure
+  schedule: '*/30 * * * *'
+```
+```
+kubectl -n ckad-job get cj simple-node-job
+```
