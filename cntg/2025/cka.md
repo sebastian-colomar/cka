@@ -218,3 +218,16 @@ nginx-rc   ClusterIP   10.102.123.110   <none>        80/TCP    104m
 ```
 kubectl explain svc.spec.type
 ```
+```
+~/CKA$ kubectl get rc nginx-rc
+NAME       DESIRED   CURRENT   READY   AGE
+nginx-rc   3         3         3       133m
+
+~/CKA$ kubectl get svc nginx-rc
+NAME       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+nginx-rc   ClusterIP   10.102.123.110   <none>        80/TCP    114m
+
+~/CKA$ kubectl get ep nginx-rc
+NAME       ENDPOINTS                                   AGE
+nginx-rc   10.244.0.6:80,10.244.0.8:80,10.244.0.9:80   114m
+```
