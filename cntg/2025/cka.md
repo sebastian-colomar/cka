@@ -209,3 +209,9 @@ kubectl exec -c busybox multi-container-pod -- nslookup nginx-rc.default.svc.clu
 Name:   nginx-rc.default.svc.cluster.local
 Address: 10.102.123.110
 ```
+```
+kubectl get svc nginx-rc
+
+NAME       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+nginx-rc   ClusterIP   10.102.123.110   <none>        80/TCP    104m
+```
