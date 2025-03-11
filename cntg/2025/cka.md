@@ -77,6 +77,8 @@ spec:
     metadata:
       labels:
         app: nginx
+        author: Sebas
+        fecha: 2025
     spec:
       containers:
         - name: nginx
