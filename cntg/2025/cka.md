@@ -63,6 +63,9 @@ kubectl get po -owide
 kubectl exec multi-container-pod -- ping -c1 10.244.0.5
 ```
 ```
+kubectl delete po multi-container-pod
+```
+```
 apiVersion: v1
 kind: ReplicationController
 metadata:
@@ -90,6 +93,33 @@ spec:
 kubectl create -f rc.yaml
 
 Error from server (BadRequest): error when creating "rc.yaml": ReplicationController in version "v1" cannot be handled as a ReplicationController: json: cannot unmarshal number into Go struct field ObjectMeta.spec.template.metadata.labels of type string
+```
+```
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nginx-rc
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+        author: Sebas
+        fecha: '2025'
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+```
+```
+kubectl create -f rc.yaml
 ```
 ```
 kubectl get po
