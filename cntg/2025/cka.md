@@ -105,3 +105,11 @@ kubectl get rc
 NAME       DESIRED   CURRENT   READY   AGE
 nginx-rc   3         3         3       58s
 ```
+```
+kubectl get po -owide
+
+NAME                  READY   STATUS    RESTARTS      AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+nginx-rc-4ldg6        1/1     Running   0             17m   10.244.0.7   minikube   <none>           <none>
+nginx-rc-pgphp        1/1     Running   0             17m   10.244.0.6   minikube   <none>           <none>
+nginx-rc-wvllh        1/1     Running   0             17m   10.244.0.8   minikube   <none>           <none>
+```
