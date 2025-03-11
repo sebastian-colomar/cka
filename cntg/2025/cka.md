@@ -86,3 +86,8 @@ spec:
           ports:
             - containerPort: 80
 ```
+```
+kubectl create -f rc.yaml
+
+Error from server (BadRequest): error when creating "rc.yaml": ReplicationController in version "v1" cannot be handled as a ReplicationController: json: cannot unmarshal number into Go struct field ObjectMeta.spec.template.metadata.labels of type string
+```
