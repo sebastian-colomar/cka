@@ -1,4 +1,6 @@
-# CKA 2025/03/10
+# CKA
+
+## 2025/03/10
 
 - https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/
 - https://kubernetes.io/docs/home/
@@ -16,3 +18,8 @@
 
 ---
 - https://kubernetes.io/docs/concepts/overview/components/
+
+---
+## 2025/03/11
+
+- https://kubernetes.io/docs/tutorials/hello-minikube/
