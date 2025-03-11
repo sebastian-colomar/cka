@@ -91,3 +91,17 @@ kubectl create -f rc.yaml
 
 Error from server (BadRequest): error when creating "rc.yaml": ReplicationController in version "v1" cannot be handled as a ReplicationController: json: cannot unmarshal number into Go struct field ObjectMeta.spec.template.metadata.labels of type string
 ```
+```
+kubectl get po
+
+NAME                  READY   STATUS    RESTARTS   AGE
+nginx-rc-4ldg6        1/1     Running   0          6s
+nginx-rc-pgphp        1/1     Running   0          6s
+nginx-rc-wvllh        1/1     Running   0          6s
+```
+```
+kubectl get rc
+
+NAME       DESIRED   CURRENT   READY   AGE
+nginx-rc   3         3         3       58s
+```
