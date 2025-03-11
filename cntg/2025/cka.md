@@ -55,3 +55,8 @@ spec:
     - name: shared-data
       emptyDir: {}
 ```
+```
+kubectl create -f po.yaml
+kubectl get po
+kubectl get -oyaml po multi-container-pod
+```
