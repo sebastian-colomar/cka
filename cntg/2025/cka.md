@@ -135,3 +135,41 @@ sudo iptables -S -t nat|grep SVC.*default/nginx-rc
 -A KUBE-SVC-Z3R7LL5CXYDH3WP6 -m comment --comment "default/nginx-rc -> 10.244.0.7:80" -m statistic --mode random --probability 0.50000000000 -j KUBE-SEP-SHCX5DR6NLHG3ECF
 -A KUBE-SVC-Z3R7LL5CXYDH3WP6 -m comment --comment "default/nginx-rc -> 10.244.0.8:80" -j KUBE-SEP-ZVXZ4JKXFV5INHUS
 ```
+```
+kubectl get po -owide
+
+NAME                  READY   STATUS    RESTARTS       AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+nginx-rc-4ldg6        1/1     Running   0              28m   10.244.0.7   minikube   <none>           <none>
+nginx-rc-pgphp        1/1     Running   0              28m   10.244.0.6   minikube   <none>           <none>
+nginx-rc-wvllh        1/1     Running   0              28m   10.244.0.8   minikube   <none>           <none>
+```
+```
+kubectl delete po nginx-rc-4ldg6
+
+pod "nginx-rc-4ldg6" deleted
+```
+```
+kubectl get po -owide
+
+NAME                  READY   STATUS    RESTARTS       AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+nginx-rc-fcvfd        1/1     Running   0              23s   10.244.0.9   minikube   <none>           <none>
+nginx-rc-pgphp        1/1     Running   0              29m   10.244.0.6   minikube   <none>           <none>
+nginx-rc-wvllh        1/1     Running   0              29m   10.244.0.8   minikube   <none>           <none>
+```
+```
+minikube ssh
+```
+```
+sudo iptables -S -t nat|grep SVC.*default/nginx-rc
+
+-A KUBE-SVC-Z3R7LL5CXYDH3WP6 ! -s 10.244.0.0/16 -d 10.102.123.110/32 -p tcp -m comment --comment "default/nginx-rc cluster IP" -m tcp --dport 80 -j KUBE-MARK-MASQ
+-A KUBE-SVC-Z3R7LL5CXYDH3WP6 -m comment --comment "default/nginx-rc -> 10.244.0.6:80" -m statistic --mode random --probability 0.33333333349 -j KUBE-SEP-OYEEXILGJE3EWWH6
+-A KUBE-SVC-Z3R7LL5CXYDH3WP6 -m comment --comment "default/nginx-rc -> 10.244.0.8:80" -m statistic --mode random --probability 0.50000000000 -j KUBE-SEP-ZVXZ4JKXFV5INHUS
+-A KUBE-SVC-Z3R7LL5CXYDH3WP6 -m comment --comment "default/nginx-rc -> 10.244.0.9:80" -j KUBE-SEP-BR7KISXRDRYWTHB6
+```
+```
+kubectl get ep nginx-rc
+
+NAME       ENDPOINTS                                   AGE
+nginx-rc   10.244.0.6:80,10.244.0.8:80,10.244.0.9:80   12m
+```
