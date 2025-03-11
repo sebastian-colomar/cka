@@ -203,3 +203,9 @@ kubectl get ep nginx-rc
 NAME       ENDPOINTS                                   AGE
 nginx-rc   10.244.0.6:80,10.244.0.8:80,10.244.0.9:80   12m
 ```
+```
+kubectl exec -c busybox multi-container-pod -- nslookup nginx-rc.default.svc.cluster.local | grep Name -A1
+
+Name:   nginx-rc.default.svc.cluster.local
+Address: 10.102.123.110
+```
