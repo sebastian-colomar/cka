@@ -27,3 +27,31 @@
 ```
 kubectl
 ```
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multi-container-pod
+  labels:
+    app: multi-container
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: shared-data
+          mountPath: /usr/share/nginx/html
+          
+    - name: busybox
+      image: busybox
+      command: ["/bin/sh", "-c", "echo 'Hola desde BusyBox' > /data/index.html && sleep 3600"]
+      volumeMounts:
+        - name: shared-data
+          mountPath: /data
+
+  volumes:
+    - name: shared-data
+      emptyDir: {}
+```
