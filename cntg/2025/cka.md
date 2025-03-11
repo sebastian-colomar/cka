@@ -23,3 +23,6 @@
 ## 2025/03/11
 
 - https://kubernetes.io/docs/tutorials/hello-minikube/
+```
+kubectl
+```
