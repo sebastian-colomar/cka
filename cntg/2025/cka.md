@@ -62,3 +62,25 @@ kubectl get -oyaml po multi-container-pod
 kubectl get po -owide
 kubectl exec multi-container-pod -- ping -c1 10.244.0.5
 ```
+```
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nginx-rc
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+```
