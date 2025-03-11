@@ -59,4 +59,6 @@ spec:
 kubectl create -f po.yaml
 kubectl get po
 kubectl get -oyaml po multi-container-pod
+kubectl get po -owide
+kubectl exec multi-container-pod -- ping -c1 10.244.0.
 ```
