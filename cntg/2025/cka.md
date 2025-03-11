@@ -113,3 +113,14 @@ nginx-rc-4ldg6        1/1     Running   0             17m   10.244.0.7   minikub
 nginx-rc-pgphp        1/1     Running   0             17m   10.244.0.6   minikube   <none>           <none>
 nginx-rc-wvllh        1/1     Running   0             17m   10.244.0.8   minikube   <none>           <none>
 ```
+```
+kubectl expose rc nginx-rc
+
+service/nginx-rc exposed
+```
+```
+kubectl get svc nginx-rc
+
+NAME       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+nginx-rc   ClusterIP   10.102.123.110   <none>        80/TCP    47s
+```
