@@ -124,3 +124,14 @@ kubectl get svc nginx-rc
 NAME       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
 nginx-rc   ClusterIP   10.102.123.110   <none>        80/TCP    47s
 ```
+```
+minikube ssh
+```
+```
+sudo iptables -S -t nat|grep SVC.*default/nginx-rc
+
+-A KUBE-SVC-Z3R7LL5CXYDH3WP6 ! -s 10.244.0.0/16 -d 10.102.123.110/32 -p tcp -m comment --comment "default/nginx-rc cluster IP" -m tcp --dport 80 -j KUBE-MARK-MASQ
+-A KUBE-SVC-Z3R7LL5CXYDH3WP6 -m comment --comment "default/nginx-rc -> 10.244.0.6:80" -m statistic --mode random --probability 0.33333333349 -j KUBE-SEP-OYEEXILGJE3EWWH6
+-A KUBE-SVC-Z3R7LL5CXYDH3WP6 -m comment --comment "default/nginx-rc -> 10.244.0.7:80" -m statistic --mode random --probability 0.50000000000 -j KUBE-SEP-SHCX5DR6NLHG3ECF
+-A KUBE-SVC-Z3R7LL5CXYDH3WP6 -m comment --comment "default/nginx-rc -> 10.244.0.8:80" -j KUBE-SEP-ZVXZ4JKXFV5INHUS
+```
