@@ -23,6 +23,7 @@
 ## 2025/03/11
 
 - https://kubernetes.io/docs/tutorials/hello-minikube/
+- https://kubernetes.io/docs/reference/kubectl/
 ```
 kubectl
 ```
