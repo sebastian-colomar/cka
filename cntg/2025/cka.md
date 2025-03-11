@@ -235,3 +235,5 @@ kubectl exec nginx-rc-fcvfd -- curl -sI localhost
 
 minikube ssh -- curl -sI localhost:31444
 ```
+- https://www.diegomacedo.com.br/wp-content/uploads/2012/02/proxy.png
+- https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/reverse-proxy-02-1.jpg
