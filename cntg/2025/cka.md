@@ -215,3 +215,6 @@ kubectl get svc nginx-rc
 NAME       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
 nginx-rc   ClusterIP   10.102.123.110   <none>        80/TCP    104m
 ```
+```
+kubectl explain svc.spec.type
+```
