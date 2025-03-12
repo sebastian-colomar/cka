@@ -263,3 +263,4 @@ kubectl -n kube-system get cm extension-apiserver-authentication -oyaml
 - https://kubernetes.io/docs/concepts/security/service-accounts/
 - https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 - https://kubernetes.io/docs/concepts/configuration/configmap/
+- https://kubernetes.io/docs/concepts/configuration/secret/
