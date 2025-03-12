@@ -267,3 +267,6 @@ kubectl -n kube-system get cm extension-apiserver-authentication -oyaml
 ```
 kubectl api-resources
 ```
+---
+## STORAGE
+- https://kubernetes.io/docs/concepts/storage/
