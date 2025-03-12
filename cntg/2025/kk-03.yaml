@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: simple-python-job
+  namespace: ckad-job
+spec:
+  schedule: "*/30 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: python
+            command:
+            - /bin/sh
+            - -c
+            - ps -eaf
