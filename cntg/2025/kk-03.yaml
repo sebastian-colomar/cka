@@ -4,15 +4,16 @@ metadata:
   name: simple-python-job
   namespace: ckad-job
 spec:
-  schedule: "*/30 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: hello
-            image: python
-            command:
+          - command:
             - /bin/sh
             - -c
             - ps -eaf
+            name: hello
+            image: python
+          restartPolicy: OnFailure
+  schedule: "*/30 * * * *"
