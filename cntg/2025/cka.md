@@ -241,3 +241,13 @@ minikube ssh -- curl -sI localhost:31444
 ---
 - https://kubernetes.io/docs/reference/access-authn-authz/authentication/
 - https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+```
+kubectl config use-context cluster1
+
+Switched to context "cluster1".
+```
+Archivos relevantes:
+- /etc/kubernetes/admin.conf → Credenciales de administrador del clúster.
+- /etc/kubernetes/kubelet.conf → Credenciales del Kubelet.
+- /etc/kubernetes/controller-manager.conf → Credenciales del Controller Manager.
+- /etc/kubernetes/scheduler.conf → Credenciales del Scheduler.
