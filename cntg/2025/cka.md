@@ -252,7 +252,7 @@ Archivos relevantes:
 - /etc/kubernetes/controller-manager.conf → Credenciales del Controller Manager.
 - /etc/kubernetes/scheduler.conf → Credenciales del Scheduler.
 ```
-kubectl -n kube-system get sa
+kubectl -n kube-system get sa metrics-server -oyaml
 
 kubectl -n kube-system get rolebinding metrics-server-auth-reader -oyaml
 
