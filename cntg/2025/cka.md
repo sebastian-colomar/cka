@@ -270,3 +270,11 @@ kubectl api-resources
 ---
 ## STORAGE
 - https://kubernetes.io/docs/concepts/storage/
+
+---
+## INIT CONTAINERS
+- https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
+- https://github.com/sebastian-colomar/phpinfo/blob/main/main/kubernetes/kube-compose-rs-echo.yaml
+```
+kubectl explain po.spec.volumes.emptyDir.medium
+```
