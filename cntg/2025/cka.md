@@ -271,6 +271,9 @@ kubectl api-resources
 ## STORAGE
 - https://kubernetes.io/docs/concepts/storage/
 
+- DATABASES = BLOCK STORAGE = LOCAL STORAGE = RWO = STATEFULSET
+- WEBSERVERS = OBJECT/FILESYSTEM STORAGE = REMOTE STORAGE = RWX/ROX = DEPLOYMENT/DAEMONSET
+
 ---
 ## INIT CONTAINERS
 - https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
