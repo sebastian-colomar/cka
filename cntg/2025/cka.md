@@ -275,6 +275,10 @@ kubectl api-resources
 ## INIT CONTAINERS
 - https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
 - https://github.com/sebastian-colomar/phpinfo/blob/main/main/kubernetes/kube-compose-rs-echo.yaml
+- https://github.com/sebastian-colomar/simplilearn-dockercoins/blob/main/2021-09/etc/kubernetes/manifests/hasher-rc.yaml
+- https://github.com/sebastian-colomar/dockercoins/blob/main/main/etc/kubernetes/manifests/po-redis.yaml
+- https://github.com/sebastian-colomar/simplilearn-phpinfo/blob/main/2021-07/etc/kubernetes/manifests/rs-volume.yaml
+- https://github.com/sebastian-colomar/simplilearn-dockercoins/blob/main/main/etc/kubernetes/manifests/rc-webui.yaml
 ```
 kubectl explain po.spec.volumes.emptyDir.medium
 ```
