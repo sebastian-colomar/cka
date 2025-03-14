@@ -288,3 +288,8 @@ kubectl api-resources
 ```
 kubectl explain po.spec.volumes.emptyDir.medium
 ```
+---
+## HELM
+- https://helm.sh/
+---
+- https://github.com/sebastian-colomar/openshift/blob/master/master/course/content/helm-php.md
