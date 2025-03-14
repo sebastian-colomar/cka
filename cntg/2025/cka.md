@@ -8,7 +8,10 @@
 - https://labs.play-with-docker.com/
 - https://labs.play-with-k8s.com/
 - https://shell.cloud.google.com/
-
+---
+- https://kodekloud.com/public-playgrounds/
+- https://killercoda.com/kubernetes
+- https://killer.sh/
 ---
 
 - https://kubernetes.io/docs/concepts/overview/
