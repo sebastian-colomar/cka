@@ -1,6 +1,5 @@
 # CKA
 
-## 2025/03/10
 
 - https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/
 - https://kubernetes.io/docs/home/
@@ -23,7 +22,6 @@
 - https://kubernetes.io/docs/concepts/overview/components/
 
 ---
-## 2025/03/11
 
 - https://kubernetes.io/docs/tutorials/hello-minikube/
 - https://kubernetes.io/docs/reference/kubectl/
@@ -293,3 +291,10 @@ kubectl explain po.spec.volumes.emptyDir.medium
 - https://helm.sh/
 ---
 - https://github.com/sebastian-colomar/openshift/blob/master/master/course/content/helm-php.md
+--- 
+## RESOURCES
+
+- https://killer.sh/killercoda-access
+- https://killercoda.com/
+- https://killercoda.com/cka
+- https://killercoda.com/killer-shell-cka
