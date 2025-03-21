@@ -1,0 +1,10 @@
+## RBAC
+```
+kubectl create sa pvviewer
+
+kubectl create clusterrole pvviewer-role --resource pv --verb list
+
+kubectl create clusterrolebinding pvviewer-role-binding --clusterrole pvviewer-role --serviceaccount default:pvviewer
+
+kubectl auth can-i list pv --as system:serviceaccount:default:pvviewer
+```
